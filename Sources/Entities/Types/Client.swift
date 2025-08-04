@@ -66,7 +66,7 @@ public enum Client: Sendable {
       )
     case .didClient(let did):
       return .init(
-        scheme: .did,
+        scheme: .decentralized_identifier,
         originalClientId: did.string
       )
     case .attested(let clientId):

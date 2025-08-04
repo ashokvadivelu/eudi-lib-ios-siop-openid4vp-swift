@@ -18,7 +18,7 @@ public struct OpenId4VPSpec {
   public static let clientIdSchemePreRegistered = "pre-registered"
   public static let clientIdSchemeRedirectUri = "redirect_uri"
   public static let clientIdSchemeHttps = "https"
-  public static let clientIdSchemeDid = "did"
+  public static let clientIdSchemeDid = "decentralized_identifier"
   public static let clientIdSchemeX509SanUri = "x509_san_uri"
   public static let clientIdSchemeX509SanDns = "x509_san_dns"
   public static let clientIdSchemeVerifierAttestation = "verifier_attestation"

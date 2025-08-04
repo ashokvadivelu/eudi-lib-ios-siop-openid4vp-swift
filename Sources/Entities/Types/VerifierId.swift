@@ -34,6 +34,8 @@ public struct VerifierId: Sendable {
         return OpenId4VPSpec.clientIdSchemeX509SanUri
       case .x509SanDns:
         return OpenId4VPSpec.clientIdSchemeX509SanDns
+      case .decentralized_identifier:
+          return OpenId4VPSpec.clientIdSchemeDid
       case .verifierAttestation:
         return OpenId4VPSpec.clientIdSchemeVerifierAttestation
       default:
@@ -81,8 +83,8 @@ public struct VerifierId: Sendable {
           throw invalid("'\(ClientIdScheme.preRegistered)' cannot be used as a Client ID Scheme")
         case .redirectUri, .x509SanUri, .x509SanDns, .verifierAttestation:
           return VerifierId(scheme: scheme, originalClientId: originalClientId)
-        case .https, .did:
-          return VerifierId(scheme: scheme, originalClientId: clientId)
+        case .https, .decentralized_identifier:
+          return VerifierId(scheme: scheme, originalClientId: originalClientId)
         }
       }
     }

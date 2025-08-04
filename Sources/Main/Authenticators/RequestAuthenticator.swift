@@ -205,9 +205,7 @@ internal actor RequestAuthenticator {
       state: requestObject.state,
       vpFormats: formats.values.isEmpty ? try VpFormats.default() : formats,
       transactionData: requestObject.transactionData,
-      verifierAttestations:  try requestObject.verifierAttestations?.map({ json in
-        try VerifierAttestation.from(json: json)
-      })
+      verifierAttestations:  nil
     ))
   }
 

@@ -26,7 +26,7 @@ public enum ClientIdScheme: String, Codable, Sendable {
   case preRegistered = "pre-registered"
   case redirectUri = "redirect_uri"
   case https = "https"
-  case did = "did"
+  case decentralized_identifier = "decentralized_identifier"
   case x509SanDns = "x509_san_dns"
   case x509SanUri = "x509_san_uri"
   case verifierAttestation = "verifier_attestation"
@@ -45,7 +45,7 @@ extension ClientIdScheme {
       scheme == "pre-registered" ||
       scheme == "x509_san_dns" ||
       scheme == "x509_san_uri" ||
-      scheme == "did" ||
+      scheme == "decentralized_identifier" ||
       scheme == "https" ||
       scheme == "verifier_attestation",
       let clientIdScheme = ClientIdScheme(rawValue: scheme)
@@ -82,8 +82,8 @@ extension ClientIdScheme {
       self = .redirectUri
     case "https":
       self = .https
-    case "did":
-      self = .did
+    case "decentralized_identifier":
+        self = .decentralized_identifier
     case "x509_san_dns":
       self = .x509SanDns
     case "x509_san_uri":
