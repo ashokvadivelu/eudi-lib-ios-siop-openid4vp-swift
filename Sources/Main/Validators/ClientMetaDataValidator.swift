@@ -46,7 +46,7 @@ internal actor ClientMetaDataValidator {
 
     let formats = try? VpFormats(from: clientMetaData.vpFormats)
     let validated = await ClientMetaData.Validated(
-      jwkSet: try extractKeySet(clientMetaData: clientMetaData),
+      jwkSet: try? extractKeySet(clientMetaData: clientMetaData),
       idTokenJWSAlg: idTokenJWSAlg,
       idTokenJWEAlg: idTokenJWEAlg,
       idTokenJWEEnc: idTokenJWEEnc,
