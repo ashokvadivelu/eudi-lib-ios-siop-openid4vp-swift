@@ -45,12 +45,12 @@ internal actor ClientMetaDataValidator {
 
     let keySet = try? await extractKeySet(clientMetaData: clientMetaData)
     let formats = try? VpFormatsSupported(from: clientMetaData.vpFormatsSupported)
-    let supported = try responseEncryptionMethodsSupported(
-      unvalidated: clientMetaData
-    )
+//    let supported = try responseEncryptionMethodsSupported(
+//      unvalidated: clientMetaData
+//    )
     let responseEncryptionSpecification = try responseEncryptionSpecification(
       responseMode: responseMode,
-      verifierSupportedEncryptionMethods: supported,
+      verifierSupportedEncryptionMethods: nil,
       keySet: keySet,
       responseEncryptionConfiguration: responseEncryptionConfiguration
     )
