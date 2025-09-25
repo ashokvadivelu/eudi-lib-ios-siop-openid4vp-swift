@@ -215,16 +215,16 @@ internal actor ClientAuthenticator {
     keyLookup: DIDPublicKeyLookupAgentType
   ) async throws -> Client {
     
-    guard let kid = jws.header.kid else {
-      throw ValidationError.validationError("kid not found in JWT header")
-    }
-    
-    guard
-      let keyUrl = AbsoluteDIDUrl.parse(kid),
-      keyUrl.string.hasPrefix(clientId)
-    else {
-      throw ValidationError.validationError("kid not found in JWT header")
-    }
+//    guard let kid = jws.header.kid else {
+//      throw ValidationError.validationError("kid not found in JWT header")
+//    }
+//    
+//    guard
+//      let keyUrl = AbsoluteDIDUrl.parse(kid),
+//      keyUrl.string.hasPrefix(clientId)
+//    else {
+//      throw ValidationError.validationError("kid not found in JWT header")
+//    }
     
     guard let clientIdAsDID = DID.parse(clientId) else {
       throw ValidationError.validationError("Invalid DID")
