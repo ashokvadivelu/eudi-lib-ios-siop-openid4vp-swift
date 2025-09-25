@@ -48,12 +48,12 @@ internal actor ClientMetaDataValidator {
 //    let supported = try responseEncryptionMethodsSupported(
 //      unvalidated: clientMetaData
 //    )
-    let responseEncryptionSpecification = try responseEncryptionSpecification(
-      responseMode: responseMode,
-      verifierSupportedEncryptionMethods: nil,
-      keySet: keySet,
-      responseEncryptionConfiguration: responseEncryptionConfiguration
-    )
+//    let responseEncryptionSpecification = try responseEncryptionSpecification(
+//      responseMode: responseMode,
+//      verifierSupportedEncryptionMethods: nil,
+//      keySet: keySet,
+//      responseEncryptionConfiguration: responseEncryptionConfiguration
+//    )
     
     let validated = ClientMetaData.Validated(
       jwkSet: keySet,
@@ -62,7 +62,7 @@ internal actor ClientMetaDataValidator {
       idTokenJWEEnc: idTokenJWEEnc,
       subjectSyntaxTypesSupported: subjectSyntaxTypesSupported,
       vpFormatsSupported: try (formats ?? VpFormatsSupported.empty()),
-      responseEncryptionSpecification: responseEncryptionSpecification
+      responseEncryptionSpecification: nil
     )
 
     return validated
